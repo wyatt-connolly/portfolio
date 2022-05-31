@@ -4,7 +4,7 @@ import { BriefcaseIcon, CodeIcon } from "@heroicons/react/solid";
 
 function Hero() {
   return (
-    <div className="container mx-auto max-w-2xl px-4 md:px-8 py-40 md:py-48">
+    <div className="container mx-auto max-w-2xl px-4 md:px-8 pt-40 md:pt-48">
       <div className="flex items-center space-x-3">
         <img
           src="profile.jpg"
@@ -24,12 +24,12 @@ function Hero() {
           </h2>
         </div>
       </div>
-      <p className="text-[#A1A1B5] text-xl py-6">
+      <p className="text-[#A1A1B5] text-xl pt-10">
         Welcome to my digital garden where I share what I'm learning about
         shipping great products, becoming a better developer and growing a
         career in tech.
       </p>
-      <div className="flex px-1 mt-4 md:mt-12 gap-12">
+      <div className="flex px-1 pt-8 md:pt-12 gap-12">
         <div className="flex flex-col items-center space-y-1 cursor-pointer transition ease-in-out delay-150 hover:scale-125 hover:duration-300 ">
           <div className="flex items-center justify-center rounded h-8 w-8 bg-gradient-to-r from-[#3E3E69] to-[#A1A1B5] ">
             <BriefcaseIcon className="rounded h-6 w-6 fill-white " />
