@@ -3,7 +3,7 @@ import ProjectCard from "./ProjectCard";
 
 function Projects({ title, description, image }) {
   return (
-    <div className="flex container flex-col items-center mx-auto max-w-2xl px-4 md:px-8 mt-12 md:mt-24 space-y-10 border-solid border-2 border-indigo-600">
+    <div className="flex container flex-col items-center mx-auto max-w-2xl px-4 md:px-8 mt-12 md:mt-24 space-y-10">
       <ProjectCard
         title="Twitter Clone"
         image="https://user-images.githubusercontent.com/88942814/167864022-5f7f4ad7-b7cc-43da-82ab-21015728f67d.png"
