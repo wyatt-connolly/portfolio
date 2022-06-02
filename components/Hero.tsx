@@ -1,6 +1,7 @@
 import React from "react";
 import ReactTypingEffect from "react-typing-effect";
 import { BriefcaseIcon, CodeIcon } from "@heroicons/react/solid";
+import Link from "next/link";
 
 function Hero() {
   return (
@@ -30,18 +31,28 @@ function Hero() {
         career in tech.
       </p>
       <div className="flex px-1 pt-8 md:pt-12 gap-12">
-        <div className="flex flex-col items-center space-y-1 cursor-pointer transition ease-in-out delay-150 hover:scale-125 hover:duration-300 ">
+        <a
+          href="https://www.linkedin.com/in/wyatt-connolly-a37688238/"
+          target="_blank"
+          rel="noreferrer"
+          className="flex flex-col items-center space-y-1 cursor-pointer transition ease-in-out delay-150 hover:scale-125 hover:duration-300 "
+        >
           <div className="flex items-center justify-center rounded h-8 w-8 bg-gradient-to-r from-[#3E3E69] to-[#A1A1B5] ">
             <BriefcaseIcon className="rounded h-6 w-6 fill-white " />
           </div>
           <p className="text-[#A1A1B5] text-md">LinkedIn</p>
-        </div>
-        <div className="flex flex-col items-center space-y-1 cursor-pointer transition ease-in-out delay-150 hover:scale-125 hover:duration-300 ">
+        </a>
+        <a
+          href="https://github.com/wyatt-connolly"
+          target="_blank"
+          rel="noreferrer"
+          className="flex flex-col items-center space-y-1 cursor-pointer transition ease-in-out delay-150 hover:scale-125 hover:duration-300 "
+        >
           <div className="flex items-center justify-center rounded h-8 w-8 bg-gradient-to-r from-[#3E3E69] to-[#A1A1B5] ">
             <CodeIcon className="rounded h-6 w-6 fill-white " />
           </div>
           <p className="text-[#A1A1B5] text-md">Github</p>
-        </div>
+        </a>
       </div>
     </div>
   );

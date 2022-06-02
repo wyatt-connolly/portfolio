@@ -3,10 +3,12 @@ import Head from "next/head";
 import Image from "next/image";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
-import Projects from "../components/Projects";
+import ProjectsPage from "../components/ProjectsPage";
 import Footer from "../components/Footer";
+import { sanityClient } from "../lib/sanity.server";
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ projects }) => {
+  console.log(projects);
   return (
     <div>
       <Head>
@@ -17,11 +19,20 @@ const Home: NextPage = () => {
       <Navbar />
       <main className="bg-[#18181B]">
         <Hero />
-        <Projects />
+        <ProjectsPage projects={projects} />
       </main>
       <Footer />
     </div>
   );
 };
 
+export async function getStaticProps() {
+  const projects = await sanityClient.fetch(`*[_type == "project"]`);
+
+  return {
+    props: {
+      projects,
+    },
+  };
+}
 export default Home;

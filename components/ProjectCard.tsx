@@ -7,7 +7,7 @@ export default function ProjectCard({ title, description, image }) {
         <img className="w-full" src={image} alt="Twitter Clone" />
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2 text-[#A1A1B5]">{title}</div>
-          <p className="text-[#A1A1B5] text-base">{description}</p>
+          <div>{description}</div>
         </div>
         <div className="px-6 pt-4 pb-2">
           <button className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
