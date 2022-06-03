@@ -25,7 +25,7 @@ function Hero() {
           </h2>
         </div>
       </div>
-      <p className="text-[#A1A1B5] text-xl pt-10">
+      <p className="text-[#A1A1B5] text-xl pt-10 ">
         Welcome to my digital garden where I share what I'm learning about
         shipping great products, becoming a better developer and growing a
         career in tech.
@@ -40,7 +40,7 @@ function Hero() {
           <div className="flex items-center justify-center rounded h-8 w-8 bg-gradient-to-r from-[#3E3E69] to-[#A1A1B5] ">
             <BriefcaseIcon className="rounded h-6 w-6 fill-white " />
           </div>
-          <p className="text-[#A1A1B5] text-md">LinkedIn</p>
+          <p className="text-[#A1A1B5] text-sm font-medium">LinkedIn</p>
         </a>
         <a
           href="https://github.com/wyatt-connolly"
@@ -51,7 +51,7 @@ function Hero() {
           <div className="flex items-center justify-center rounded h-8 w-8 bg-gradient-to-r from-[#3E3E69] to-[#A1A1B5] ">
             <CodeIcon className="rounded h-6 w-6 fill-white " />
           </div>
-          <p className="text-[#A1A1B5] text-md">Github</p>
+          <p className="text-[#A1A1B5] text-sm font-medium">Github</p>
         </a>
       </div>
     </div>
