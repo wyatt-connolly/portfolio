@@ -9,6 +9,28 @@ export default {
       title: "Name",
     },
     { name: "image", type: "image" },
-    { name: "Description", name: "description", type: "text" },
+    {
+      title: "Slug",
+      name: "slug",
+      type: "slug",
+      options: {
+        source: "name",
+        maxLength: 96,
+      },
+    },
+    {
+      name: "publishedAt",
+      title: "Published at",
+      type: "date",
+      options: {
+        dateFormat: "MMM-DD",
+        calendarTodayLabel: "Today",
+      },
+    },
+    {
+      name: "body",
+      type: "array",
+      of: [{ type: "block" }],
+    },
   ],
 };
