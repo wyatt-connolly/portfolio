@@ -21,6 +21,7 @@
     "react-scroll": "^1.8.7",
     "react-tsparticles": "^2.0.6",
     "react-typing-effect": "^2.0.5",
+    "recoil": "^0.7.3",
     "slugify": "^1.6.5"
   },
   "devDependencies": {

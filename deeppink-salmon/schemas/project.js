@@ -32,5 +32,26 @@ export default {
       type: "array",
       of: [{ type: "block" }],
     },
+    {
+      name: "lessons",
+      type: "array",
+      of: [
+        { type: "block" },
+        {
+          name: "break",
+          type: "object",
+          title: "Break",
+          fields: [
+            {
+              name: "style",
+              type: "string",
+              options: {
+                list: ["break"],
+              },
+            },
+          ],
+        },
+      ],
+    },
   ],
 };

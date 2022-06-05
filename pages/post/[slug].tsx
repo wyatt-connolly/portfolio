@@ -1,16 +1,33 @@
 import { useRouter } from "next/router";
 import { sanityClient } from "../../lib/sanity.server";
-import Navbar from "../../components/Navbar";
 import { PortableText } from "@portabletext/react";
 
-const Post = ({ project }) => {
-  console.log(project);
+const serializers = {
+  types: {
+    break: ({ project }) => {
+      const { style } = project.node;
+      if (style === "lineBreak") {
+        return <hr className="mt-10" />;
+      }
+      return null;
+    },
+  },
+};
 
+const Post = ({ project }) => {
   return (
-    <article className="bg-[#18181B]">
-      <h1 className="text-[#A1A1B5]">{project?.slug?.current}</h1>
-      <h2 className="text-[#A1A1B5]">{project?.publishedAt}</h2>
-    </article>
+    <div className="bg-[#18181B]">
+      <article className="container mx-auto max-w-2xl px-4 md:px-8 pt-48 md:pt-48 text-[#A1A1B5]">
+        <h1 className="font-medium text-2xl mb-2 ">{project?.name}</h1>
+        <h2 className="text-[#A1A1B5]/40 text-lg mb-8 ">
+          {project?.publishedAt}
+        </h2>
+        <div className="text-lg">
+          <PortableText value={project?.lessons} />
+          <PortableText value={project?.techstack} />
+        </div>
+      </article>
+    </div>
   );
 };
 

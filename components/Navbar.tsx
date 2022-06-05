@@ -1,23 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { NavContext } from "../lib/atom";
 import { BriefcaseIcon, CodeIcon } from "@heroicons/react/solid";
 
-export default function Navbar() {
-  const [showNavbar, setShowNavbar] = useState(false);
-  const controlNavbar = () => {
-    if (window.scrollY > 475) {
-      setShowNavbar(true);
-    } else {
-      setShowNavbar(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", controlNavbar);
-    return () => {
-      window.removeEventListener("scroll", controlNavbar);
-    };
-  }, []);
-
+export default function Navbar({ showNavbar }) {
   return (
     <div className="container mx-auto max-w-2xl">
       <div className={showNavbar ? "block" : "hidden"}>
