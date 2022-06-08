@@ -26,7 +26,7 @@ function Hero() {
         </div>
       </div>
       <p className="text-[#A1A1B5] text-xl pt-10 ">
-        Welcome to my digital garden where I share what I'm learning about
+        Welcome to my digital garden where I share what I&apos;m learning about
         shipping great products, becoming a better developer and growing a
         career in tech.
       </p>
