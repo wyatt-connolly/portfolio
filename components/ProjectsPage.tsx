@@ -5,18 +5,20 @@ import Link from "next/link";
 
 function ProjectsPage({ title, body, projects }) {
   return (
-    <div className="flex container flex-col items-center mx-auto max-w-2xl px-4 md:px-8 mt-12 md:mt-24 space-y-10">
+    <div className="pt-6 md:pt-14 px-4 md:px-8">
       {projects.map((project) => (
         <Link
           key={project._id}
           href={`/post/[slug]`}
           as={`/post/${project.slug.current}`}
         >
-          <ProjectCard
-            image={urlFor(project.image).url()}
-            title={project.name}
-            body={project.body}
-          />
+          <div className="mt-10">
+            <ProjectCard
+              image={urlFor(project.cover_image).url()}
+              title={project.name}
+              body={project.body}
+            />
+          </div>
         </Link>
       ))}
     </div>

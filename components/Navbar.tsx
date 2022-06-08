@@ -1,17 +1,23 @@
 import React, { useState, useEffect, useContext } from "react";
-import { NavContext } from "../lib/atom";
 import { BriefcaseIcon, CodeIcon } from "@heroicons/react/solid";
+import { useRecoilState } from "recoil";
+import { navState } from "../lib/atom";
+import Link from "next/link";
 
-export default function Navbar({ showNavbar }) {
+export default function Navbar() {
+  const [showNavbar, setShowNavbar] = useRecoilState(navState);
+
   return (
-    <div className="container mx-auto max-w-2xl">
-      <div className={showNavbar ? "block" : "hidden"}>
-        <nav className="rounded-lg container max-w-2xl fixed z-10 top-6 py-2 px-8 flex justify-between backdrop-blur-sm ">
-          <img
-            src="profile.jpg"
-            alt="profile-img"
-            className="h-12 w-12 rounded-full ring-4 ring-[#3E3E69]"
-          />
+    <nav className={showNavbar ? "fixed top-6 z-30 w-full " : "hidden"}>
+      <div className="mx-auto w-full px-4 md:px-8 sm:max-w-screen-sm">
+        <div className="flex items-center justify-between rounded-2xl bg-white/[3%] px-4 py-2.5 shadow-surface-glass backdrop-blur backdrop-filter firefox:bg-gray-900 firefox:bg-opacity-90">
+          <Link href="/">
+            <img
+              src="profile.jpg"
+              alt="profile-img"
+              className="h-12 w-12 rounded-full ring-4 ring-[#3E3E69] cursor-pointer"
+            />
+          </Link>
           <div className="flex space-x-3 md:space-x-12">
             <a
               href="https://www.linkedin.com/in/wyatt-connolly-a37688238/"
@@ -40,8 +46,8 @@ export default function Navbar({ showNavbar }) {
               </div>
             </a>
           </div>
-        </nav>
+        </div>
       </div>
-    </div>
+    </nav>
   );
 }

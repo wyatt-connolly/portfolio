@@ -8,7 +8,7 @@ export default {
       type: "string",
       title: "Name",
     },
-    { name: "image", type: "image" },
+    { name: "cover_image", type: "image", title: "Cover Image" },
     {
       title: "Slug",
       name: "slug",
@@ -33,8 +33,9 @@ export default {
       of: [{ type: "block" }],
     },
     {
-      name: "lessons",
+      name: "summary",
       type: "array",
+      title: "Summary",
       of: [
         { type: "block" },
         {
@@ -48,6 +49,35 @@ export default {
               options: {
                 list: ["break"],
               },
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: "image_gallery",
+      type: "object",
+      title: "Image Gallery",
+      fields: [
+        {
+          name: "images",
+          type: "array",
+          title: "Images",
+          of: [
+            {
+              name: "image",
+              type: "image",
+              title: "Image",
+              options: {
+                hotspot: true,
+              },
+              fields: [
+                {
+                  name: "alt",
+                  type: "string",
+                  title: "Alternative text",
+                },
+              ],
             },
           ],
         },

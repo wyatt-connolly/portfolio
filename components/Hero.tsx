@@ -5,7 +5,7 @@ import Link from "next/link";
 
 function Hero() {
   return (
-    <div className="container mx-auto max-w-2xl px-4 md:px-8 pt-40 md:pt-48">
+    <div className="px-4 md:px-8 pt-40 md:pt-48">
       <div className="flex items-center space-x-3">
         <img
           src="profile.jpg"
