@@ -9,7 +9,7 @@ function Hero() {
       <div className="flex items-center space-x-3">
         <img
           src="profile.jpg"
-          alt="profile-img"
+          alt="Profile Image"
           className="h-16 w-16 rounded-full ring-4 ring-[#3E3E69]"
         />
         <div className="pl-3 space-y-2">

@@ -12,15 +12,14 @@ import { navState } from "../lib/atom";
 function Home({ projects }) {
   const [showNavbar, setShowNavbar] = useRecoilState(navState);
 
-  const controlNavbar = () => {
-    if (window.scrollY > 475) {
-      setShowNavbar(true);
-    } else {
-      setShowNavbar(false);
-    }
-  };
-
   useEffect(() => {
+    const controlNavbar = () => {
+      if (window.scrollY > 475) {
+        setShowNavbar(true);
+      } else {
+        setShowNavbar(false);
+      }
+    };
     window.addEventListener("scroll", controlNavbar);
     return () => {
       window.removeEventListener("scroll", controlNavbar);

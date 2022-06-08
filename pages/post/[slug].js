@@ -14,13 +14,13 @@ const Post = ({ project }) => {
 
   useEffect(() => {
     setShowNavbar(true);
-  }, []);
+  }, [setShowNavbar]);
 
   useEffect(() => {
     return () => {
       setShowNavbar(false);
     };
-  }, []);
+  }, [setShowNavbar]);
 
   return (
     <>
@@ -41,7 +41,11 @@ const Post = ({ project }) => {
         <figure>
           {project.image_gallery.images.map((image) => (
             <>
-              <img className="pt-6" src={urlFor(image).url()} />
+              <img
+                className="pt-6"
+                src={urlFor(image).url()}
+                alt="Project Gallery"
+              />
               <figcaption className="text-sm italic text-gray-500 leading-7 pt-2 pb-5">
                 {image.alt}
               </figcaption>

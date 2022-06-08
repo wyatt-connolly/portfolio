@@ -14,7 +14,7 @@ export default function Navbar() {
           <Link href="/">
             <img
               src="profile.jpg"
-              alt="profile-img"
+              alt="Navigation Profile Image"
               className="h-12 w-12 rounded-full ring-4 ring-[#3E3E69] cursor-pointer"
             />
           </Link>
