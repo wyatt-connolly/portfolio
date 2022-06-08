@@ -10,7 +10,7 @@ import { sanityClient } from "../lib/sanity.server";
 import { useRecoilState } from "recoil";
 import { navState } from "../lib/atom";
 
-const Home: NextPage = ({ projects }) => {
+function Home({ projects }) {
   const [showNavbar, setShowNavbar] = useRecoilState(navState);
 
   const controlNavbar = () => {
@@ -41,7 +41,7 @@ const Home: NextPage = ({ projects }) => {
       </main>
     </div>
   );
-};
+}
 
 export async function getStaticProps() {
   const projects = await sanityClient.fetch(`*[_type == "project"]`);
