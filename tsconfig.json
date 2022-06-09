@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "deeppink-salmon/schemas/project.js", "components/SanityComponents.js", "components/ProjectsPage.js", "components/Footer.js", "components/Hero.js", "components/Navbar.js", "components/ProjectCard.js", "pages/post/[slug].js", "pages/index.js", "pages/_app.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "deeppink-salmon/schemas/project.js", "components/SanityComponents.js", "components/ProjectsPage.tsx", "components/Footer.js", "components/Hero.js", "components/Navbar.js", "components/ProjectCard.tsx", "pages/post/[slug].tsxs", "pages/index.tsx", "pages/_app.tsx"],
   "exclude": ["node_modules"]
 }

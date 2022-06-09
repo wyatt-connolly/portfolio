@@ -8,8 +8,14 @@ import { navState } from "../../lib/atom";
 import { useRecoilState } from "recoil";
 import Navbar from "../../components/Navbar";
 import { components } from "../../components/SanityComponents";
+import type { NextPage } from "next";
+import { Projects } from "../../interfaces";
 
-const Post = ({ project }) => {
+interface Props {
+  project?: Projects;
+}
+
+const Post: NextPage<Props> = ({ project }) => {
   const [showNavbar, setShowNavbar] = useRecoilState(navState);
 
   useEffect(() => {
@@ -39,7 +45,7 @@ const Post = ({ project }) => {
           <PortableText value={project?.summary} components={components} />
         </div>
         <figure>
-          {project.image_gallery.images.map((image) => (
+          {project?.image_gallery.images.map((image) => (
             <>
               <img
                 className="pt-6"

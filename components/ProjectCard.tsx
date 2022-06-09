@@ -2,15 +2,15 @@ import React from "react";
 import { PortableText } from "@portabletext/react";
 
 const ProjectCard = React.forwardRef(function ProjectCard(
-  { onClick, href, title, body, image },
+  { href, name, body, image },
   ref
 ) {
   return (
-    <a href={href} onClick={onClick} ref={ref}>
+    <a href={href} ref={ref}>
       <div className="rounded-lg overflow-hidden shadow-lg bg-[#202036] shadow-[#3E3E69]/40 hover:brightness-110 cursor-pointer ">
         <img className="w-full" src={image} alt="Twitter Clone" />
         <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2 text-[#A1A1B5]">{title}</div>
+          <div className="font-bold text-xl mb-2 text-[#A1A1B5]">{name}</div>
           <div className="line-clamp-2 text-[#A1A1B5]">
             <PortableText value={body} />
           </div>
