@@ -7,7 +7,6 @@ import Head from "next/head";
 import { navState } from "../../lib/atom";
 import { useRecoilState } from "recoil";
 import Navbar from "../../components/Navbar";
-import { components } from "../../components/SanityComponents";
 import type { NextPage } from "next";
 import { Project } from "../../interfaces";
 import { GetStaticProps, GetStaticPaths } from "next";
