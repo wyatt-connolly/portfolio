@@ -2,7 +2,6 @@ import React from "react";
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import { Project } from "../interfaces";
-import { PortableTextProps } from "@portabletext/react";
 
 const ProjectCard = ({
   name,
@@ -24,7 +23,7 @@ const ProjectCard = ({
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2 text-[#A1A1B5]">{name}</div>
         <div className="line-clamp-2 text-[#A1A1B5]">
-          <PortableText value={body} />
+          <PortableText<any> value={body} />
         </div>
       </div>
       <div className="px-6 pt-4 pb-2">

@@ -17,10 +17,6 @@ interface Props {
   project?: Project;
 }
 
-interface IPortableText {
-  components?: 
-}
-
 const Post = ({ project }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [showNavbar, setShowNavbar] = useRecoilState(navState);
 
@@ -48,7 +44,23 @@ const Post = ({ project }: InferGetStaticPropsType<typeof getStaticProps>) => {
           {project?.publishedAt}
         </h2>
         <div className="text-lg space-y-6 pb-5">
-          <PortableText value={project?.summary} components={components} />
+          <PortableText<any>
+            value={project?.summary}
+            components={{
+              block: {
+                // Ex. 1: customizing common block types
+                h1: ({ children }) => (
+                  <h1 className="text-2xl font-medium">{children}</h1>
+                ),
+              },
+              listItem: {
+                // Ex. 1: customizing common list types
+                bullet: ({ children }) => (
+                  <li className="ml-10 list-disc">{children}</li>
+                ),
+              },
+            }}
+          />
         </div>
         <figure>
           {project?.image_gallery.images.map((image: any) => (
