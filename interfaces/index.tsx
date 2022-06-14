@@ -10,6 +10,5 @@ export type Project = {
   demoUrl: string;
   githubUrl: string;
   slug: { current: string };
-  _type: string;
   _key?: string;
 };
