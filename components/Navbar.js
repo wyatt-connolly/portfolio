@@ -8,7 +8,7 @@ export default function Navbar() {
   const [showNavbar, setShowNavbar] = useRecoilState(navState);
 
   return (
-    <nav className={showNavbar ? "fixed top-6 z-30 w-full " : "hidden"}>
+    <nav className={showNavbar ? "fixed top-6 z-30 w-full" : "hidden"}>
       <div className="mx-auto w-full px-4 md:px-8 sm:max-w-screen-sm">
         <div className="flex items-center justify-between rounded-2xl bg-white/[3%] px-4 py-2.5 shadow-surface-glass backdrop-blur backdrop-filter firefox:bg-gray-900 firefox:bg-opacity-90">
           <Link href="/">

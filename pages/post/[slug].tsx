@@ -9,13 +9,19 @@ import { useRecoilState } from "recoil";
 import Navbar from "../../components/Navbar";
 import { components } from "../../components/SanityComponents";
 import type { NextPage } from "next";
-import { Projects } from "../../interfaces";
+import { Project } from "../../interfaces";
+import { GetStaticProps, GetStaticPaths } from "next";
+import { InferGetStaticPropsType } from "next";
 
 interface Props {
-  project?: Projects;
+  project?: Project;
 }
 
-const Post: NextPage<Props> = ({ project }) => {
+interface IPortableText {
+  components?: 
+}
+
+const Post = ({ project }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [showNavbar, setShowNavbar] = useRecoilState(navState);
 
   useEffect(() => {
@@ -45,7 +51,7 @@ const Post: NextPage<Props> = ({ project }) => {
           <PortableText value={project?.summary} components={components} />
         </div>
         <figure>
-          {project?.image_gallery.images.map((image) => (
+          {project?.image_gallery.images.map((image: any) => (
             <>
               <img
                 className="pt-6"
@@ -63,21 +69,21 @@ const Post: NextPage<Props> = ({ project }) => {
   );
 };
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await sanityClient.fetch(
     `*[_type == "project" && defined(slug.current)][].slug.current`
   );
 
   return {
-    paths: paths.map((slug) => ({ params: { slug } })),
+    paths: paths.map((slug: any) => ({ params: { slug } })),
     fallback: true,
   };
-}
+};
 
-export async function getStaticProps(context) {
+export const getStaticProps: GetStaticProps = async (context) => {
   // It's important to default the slug so that it doesn't return "undefined"
-  const { slug = "" } = context.params;
-  const project = await sanityClient.fetch(
+  const { slug = "" }: any = context.params;
+  const project: Project[] = await sanityClient.fetch(
     `
     *[_type == "project" && slug.current == $slug][0]
   `,
@@ -88,6 +94,6 @@ export async function getStaticProps(context) {
       project,
     },
   };
-}
+};
 
 export default Post;

@@ -9,13 +9,15 @@ import Footer from "../components/Footer";
 import { sanityClient } from "../lib/sanity.server";
 import { useRecoilState } from "recoil";
 import { navState } from "../lib/atom";
-import { Projects } from "../interfaces";
+import { GetStaticProps } from "next";
+import { InferGetStaticPropsType } from "next";
+import { Project } from "../interfaces";
 
 interface Props {
-  projects?: [Projects];
+  projects?: Project[];
 }
 
-const Home: NextPage<Props> = ({ projects }) => {
+const Home = ({ projects }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [showNavbar, setShowNavbar] = useRecoilState(navState);
 
   const controlNavbar = () => {
@@ -47,13 +49,13 @@ const Home: NextPage<Props> = ({ projects }) => {
   );
 };
 
-export async function getStaticProps() {
-  const projects = await sanityClient.fetch(`*[_type == "project"]`);
+export const getStaticProps: GetStaticProps = async () => {
+  const projects: Project[] = await sanityClient.fetch(`*[_type == "project"]`);
 
   return {
     props: {
       projects,
     },
   };
-}
+};
 export default Home;

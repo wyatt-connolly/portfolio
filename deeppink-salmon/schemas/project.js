@@ -28,6 +28,16 @@ export default {
       },
     },
     {
+      title: "Demo URL",
+      name: "demoUrl",
+      type: "url",
+    },
+    {
+      title: "Github URL",
+      name: "githubUrl",
+      type: "url",
+    },
+    {
       name: "body",
       type: "array",
       of: [{ type: "block" }],
